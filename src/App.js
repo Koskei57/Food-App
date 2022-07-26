@@ -8,10 +8,12 @@ import FoodList from "./components/FoodList";
 function App() {
   const [loading, setLoading] = useState(false);
   const [food, setFood] = useState([]);
+  const [search, setSearch] = useState("");
+  const [query,setQuery]= useState('beef')
   
   const getFood = async () => {
     
-    const response = await fetch("https://koskei57.github.io/server/db.json")
+    const response = await fetch(`https://koskei57.github.io/server/db.json`)
     const data = await response.json();
     setFood(data);
   
@@ -22,9 +24,19 @@ function App() {
     setTimeout(() => {
       setLoading(false)
     }, 5000)
-  }, []);
+  }, [query]);
   
-  return (
+  const handleFormSubmit = (e) => {
+    e.preventDefault()
+    setQuery(search);
+    setSearch("");
+  }
+  
+  function handleFormChange(event) {
+  setSearch(event.target.value) 
+  
+  }
+  return (  
     <div className="App">
       {
         loading ? <PropagateLoader  loading={loading}  size={40} />
@@ -34,9 +46,13 @@ function App() {
             <FoodList/>
           </>
       }
+      <form className="search" onSubmit={handleFormSubmit}>
+        <input className="bar" type="text" value={search} onChange={handleFormChange} />
+        <button className="search-button" type="submit"  >Search</button>
+      </form>
       <h1>Welcome...its gonna be a lit day i swear 🥰 </h1>
       {food.map(foo => (
-        <Food name={foo.strCategory} image={foo.strCategoryThumb} description={foo.strCategoryDescription} />
+        <Food key={foo.id} name={foo.strCategory} image={foo.strCategoryThumb} description={foo.strCategoryDescription} />
       ))}
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-scroll';
+//import Login from "./Login";
 
 const Navbar = () => {
     const [nav, setNav] = useState(false);
@@ -17,12 +18,15 @@ const Navbar = () => {
     // })
     
   return (
+    <>
+    <div className='navbar'>
+    </div>
     <div className={nav ? "nav active" : "nav"}>
       <Link to='main' className='logo' >
       </Link>
       <input className='menu-btn' type="checkbox"></input>
-    
-    </div>
+      </div>
+    </>
   )
 }
 
