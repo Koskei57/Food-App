@@ -1,8 +1,12 @@
 import React from 'react'
 
-const Food = () => {
+const Food = ({name,image,description}) => {
   return (
-    <div>Food</div>
+      <div>
+          <img src={image} alt='Keroma loading' />
+          <h2>{ name}</h2>
+          <p>{description}</p>
+      </div>
   )
 }
 
