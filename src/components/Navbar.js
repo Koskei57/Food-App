@@ -21,7 +21,9 @@ const Navbar = () => {
        <div className="nav_box">
         <span className="shop">
           MyFood
-        </span>
+          </span>
+          <Link to='/'>HOME</Link>
+          <Link to='/login'>LOGIN</Link>
         <div className="cart" >
           <span>
             <i className="fas fa-cart-plus"></i>

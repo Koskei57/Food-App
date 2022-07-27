@@ -1,17 +1,58 @@
-import React from 'react';
-import "./css/Food.css";
-import FoodList from './FoodList';
+import React, { useState, useEffect } from "react";
+import Food from "./FoodList";
 
+const Home = () => {
+  const [search, setSearch] = useState("");
+  const [query, setQuery] = useState("");
+    const [food, setFood] = useState([]);
+    
+    
+  useEffect(() => {
+    getFood();
+  }, []);
 
-const Food = ({id,name,image,description}) => {
+  const getFood = async () => {
+    const response = await fetch(`https://koskei57.github.io/server/db.json`);
+    const data = await response.json();
+    setFood(data);
+  };
+    
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    setQuery(search);
+    setSearch("");
+  };
+
+  function handleFormChange(event) {
+    setSearch(event.target.value);
+  }
+
   return (
-      <div className="food" key={id}>
-          <img src={image} alt='Keroma loading' />
-          <h2>{ name}</h2>
-          <p>{description}</p>
-          <button>Order</button>
-      </div>
-  )
-}
+    <div>
+      <div></div>
+      <form className="search" onSubmit={handleFormSubmit}>
+        <input
+          className="bar"
+          type="text"
+          value={search}
+          onChange={handleFormChange}
+        />
+        <button className="search-button" type="submit">
+          Search
+        </button>
+      </form>
 
-export default Food
+      <h1>Welcome...its gonna be a lit day i swear ❤️ </h1>
+      {food.map((foo) => (
+        <Food
+          key={foo.id}
+          name={foo.strCategory}
+          image={foo.strCategoryThumb}
+          description={foo.strCategoryDescription}
+        />
+      ))}
+    </div>
+  );
+};
+
+export default Home;
