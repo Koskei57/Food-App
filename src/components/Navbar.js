@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+//import { Routes, Route } from "react-router-dom";
 import { Link } from 'react-scroll';
 import Login from "./Login";
 import "./css/Navbar.css";
@@ -15,6 +16,7 @@ const Navbar = () => {
   }
   window.addEventListener("scroll", changeBackground);  
   return (
+    <>
     <nav>
        <div className="nav_box">
         <span className="shop">
@@ -27,7 +29,8 @@ const Navbar = () => {
           <span>0</span>
         </div>
       </div>
-    </nav>
+      </nav>
+    </>
   )
 }
 

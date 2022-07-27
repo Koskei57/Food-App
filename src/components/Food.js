@@ -1,13 +1,15 @@
 import React from 'react';
-import style from "./css/Food.css";
+import "./css/Food.css";
+import FoodList from './FoodList';
 
-const Food = ({name,image,description}) => {
+
+const Food = ({id,name,image,description}) => {
   return (
-      <div className="food">
+      <div className="food" key={id}>
           <img src={image} alt='Keroma loading' />
           <h2>{ name}</h2>
           <p>{description}</p>
-          {/* <button onClick={() => handleClick(Food)}>Add to Cart</button> */}
+          <button>Order</button>
       </div>
   )
 }

@@ -6,4 +6,4 @@ const FoodList = () => {
   )
 }
 
-export default FoodList
+export default FoodList;

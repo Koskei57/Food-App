@@ -3,7 +3,8 @@ import './App.css';
 import { PropagateLoader } from "react-spinners";
 import Navbar from "./components/Navbar";
 import Food from "./components/Food";
-import FoodList from "./components/FoodList";
+// import { cleanup } from "@testing-library/react";
+
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -21,9 +22,12 @@ function App() {
   useEffect(() => {
     getFood()
     setLoading(true)
-    setTimeout(() => {
+   setTimeout(() => {
       setLoading(false)
     }, 5000)
+    // return cleanup(){
+    //   clearInterval(timerID);
+    // }
   }, [query]);
   
   const handleFormSubmit = (e) => {
@@ -41,16 +45,16 @@ function App() {
       {
         loading ? <PropagateLoader  loading={loading}  size={40} />
           :
-          <>
+          <div>
             <Navbar />
-            <FoodList/>
-          </>
+          </div>
       }
       <form className="search" onSubmit={handleFormSubmit}>
-        <input className="bar" type="text" value={search} onChange={handleFormChange} />
+        <input  className="bar" type="text" value={search} onChange={handleFormChange} />
         <button className="search-button" type="submit"  >Search</button>
       </form>
-      <h1>Welcome...its gonna be a lit day i swear 🥰 </h1>
+      
+      <h1>Welcome...its gonna be a lit day i swear ❤️ </h1>
       {food.map(foo => (
         <Food key={foo.id} name={foo.strCategory} image={foo.strCategoryThumb} description={foo.strCategoryDescription} />
       ))}
