@@ -9,7 +9,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [food, setFood] = useState([]);
   const [search, setSearch] = useState("");
-  const [query,setQuery]= useState('beef')
+  const [query,setQuery]= useState('')
   
   const getFood = async () => {
     

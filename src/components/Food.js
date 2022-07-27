@@ -7,6 +7,7 @@ const Food = ({name,image,description}) => {
           <img src={image} alt='Keroma loading' />
           <h2>{ name}</h2>
           <p>{description}</p>
+          {/* <button onClick={() => handleClick(Food)}>Add to Cart</button> */}
       </div>
   )
 }
