@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-//import { Routes, Route } from "react-router-dom";
-import { Link } from 'react-scroll';
-import Login from "./Login";
 import "./css/Navbar.css";
+import { NavLink } from 'react-router-dom';
+
+
 
 const Navbar = () => {
     const [nav, setNav] = useState(false);
@@ -16,14 +16,14 @@ const Navbar = () => {
   }
   window.addEventListener("scroll", changeBackground);  
   return (
+    
     <>
-    <nav>
+      <nav>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/food">Food</NavLink>
+        <NavLink to="/login">Login</NavLink>
        <div className="nav_box">
-        <span className="shop">
-          MyFood
-          </span>
-          <Link to='/'>HOME</Link>
-          <Link to='/login'>LOGIN</Link>
+          <span className="shop">MyFood </span>
         <div className="cart" >
           <span>
             <i className="fas fa-cart-plus"></i>
