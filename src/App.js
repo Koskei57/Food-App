@@ -5,7 +5,9 @@ import { PropagateLoader } from "react-spinners";
 import Navbar from "./components/Navbar";
 import Food from "./components/Food";
 import Home from "./components/Home";
+import FoodListForm from "./components/FoodListForm";
 import Login from "./components/Login";
+import { CartProvider } from "./cartContext";
 
 
 function App() {
@@ -22,7 +24,7 @@ function App() {
   return (  
     
     <div className="App">
-      
+      <CartProvider>
       <Navbar />
       <div className="switch">
       <Switch>
@@ -35,6 +37,9 @@ function App() {
         <Route exact path="/login">
         <Login />
         </Route>
+        <Route exact path="/foodlist">
+        <FoodListForm />
+        </Route>
         </Switch>
       </div>
       {
@@ -43,7 +48,7 @@ function App() {
           <div>
           </div>
       }
-      
+      </CartProvider>
       </div>
   
   );
