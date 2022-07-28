@@ -1,4 +1,5 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react';
+import "../App.css"
 
 const Login = () => {
     const [formData, setFormData] = useState({
@@ -20,7 +21,7 @@ const Login = () => {
     }
     
   return (
-      <div>
+      <div className='login'>
           <form onSubmit={handleSubmit}>
               <h1>Create an Account</h1>
               <label htmlFor='username'>Username</label>
