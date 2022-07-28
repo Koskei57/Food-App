@@ -22,6 +22,7 @@ const Navbar = () => {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/food">Food</NavLink>
         <NavLink to="/login">Login</NavLink>
+        <NavLink to="/foodlist">Catalogue</NavLink>
        <div className="nav_box">
           <span className="shop">MyFood </span>
         <div className="cart" >
