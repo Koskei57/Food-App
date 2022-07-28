@@ -1,5 +1,12 @@
 .homeImg{
+background-image: url(/src/images/back.jpg);
 margin-top: 1px;
-width:50%;
+width:100%;
 height:100%;
+}
+.images>p{
+position: absolute;
+top: 100px;
+margin-left: 200px;
+color: white;
 }

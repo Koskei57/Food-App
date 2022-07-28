@@ -8,7 +8,7 @@ const Navbar = () => {
     const [nav, setNav] = useState(false);
     
   const changeBackground = () => {
-    if (window.scrollY >= 50) {
+    if (window.scrollY >= 70) {
       setNav(true);
     } else {
       setNav(false);
@@ -18,13 +18,16 @@ const Navbar = () => {
   return (
     
     <>
+    
       <nav>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/food">Food</NavLink>
-        <NavLink to="/login">Login</NavLink>
-        <NavLink to="/foodlist">Catalogue</NavLink>
-       <div className="nav_box">
-          <span className="shop">MyFood </span>
+       
+        <div className="nav_box">
+        <span  className="shop">MyFood </span>
+        <NavLink className="navlink" to="/"><i class="fi fi-sr-home"></i>Home</NavLink>
+        <NavLink className="navlink" to="/food">Food</NavLink>
+        <NavLink className="navlink" to="/login" >Login</NavLink>
+        <NavLink className="navlink" to="/foodlist">Catalogue</NavLink>
+         
         <div className="cart" >
           <span>
             <i className="fas fa-cart-plus"></i>

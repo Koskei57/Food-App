@@ -47,9 +47,7 @@ const Home = () => {
           Search
         </button>
       </form>
-
-      <h1>Welcome...its gonna be a lit day i swear ❤️ </h1>
-      
+  
       {
         food.filter((meal) => {
           if (search === "") {
