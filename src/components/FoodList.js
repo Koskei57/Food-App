@@ -1,7 +1,8 @@
 import React from 'react';
 import "./css/Food.css";
 
-const Food = ({id,name,image,description}) => {
+
+const Food = ({ id, name, image, description }) => {
   return (
       <div className="food" key={id}>
           <img src={image} alt='Keroma loading' />

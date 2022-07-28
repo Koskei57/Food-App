@@ -9,14 +9,16 @@ const Home = () => {
     
   useEffect(() => {
     getFood();
-  }, []);
+  }, [query]);
 
   const getFood = async () => {
-    const response = await fetch(`https://koskei57.github.io/server/db.json`);
+    const response = await fetch("https://myfood578.herokuapp.com/meal");
     const data = await response.json();
-    setFood(data);
+      setFood(data);
   };
-    
+  console.log(getFood);
+  
+  
   const handleFormSubmit = (e) => {
     e.preventDefault();
     setQuery(search);
@@ -45,9 +47,10 @@ const Home = () => {
       <h1>Welcome...its gonna be a lit day i swear ❤️ </h1>
       {food.map((foo) => (
         <Food
-          key={foo.id}
+          key={foo.idCategory}
           name={foo.strCategory}
           image={foo.strCategoryThumb}
+          price={foo.price}
           description={foo.strCategoryDescription}
         />
       ))}

@@ -19,4 +19,10 @@ background: lightblue;
 border: none;
 padding: 10px 20px;
 color: white;
+cursor: pointer;
+}
+.switch{
+position: relative;
+margin-top: 100x;
+
 }
