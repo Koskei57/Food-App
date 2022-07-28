@@ -1,10 +1,12 @@
 import React from 'react';
+import home from "../images/home.jpg"
+
 import "./css/home.css";
 
 const HomeList = () => {
   return (
     <div className='images'>
-      {/* <img src={process.env.PUBLIC_URL + '/images/home.jpg'} alt="home" ></img> */}
+     <img src={home} alt="Home" className='homeImg'></img>
     </div>
   )
 }

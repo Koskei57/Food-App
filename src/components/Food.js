@@ -4,7 +4,7 @@ import Food from "./FoodList";
 const Home = () => {
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("");
-    const [food, setFood] = useState([]);
+  const [food, setFood] = useState([]);
     
     
   useEffect(() => {
@@ -14,7 +14,7 @@ const Home = () => {
   const getFood = async () => {
     const response = await fetch("https://myfood578.herokuapp.com/meal");
     const data = await response.json();
-      setFood(data);
+    setFood(data);
   };
   console.log(getFood);
   
@@ -24,6 +24,9 @@ const Home = () => {
     setQuery(search);
     setSearch("");
   };
+  
+  // const filterSearch = 
+  
 
   function handleFormChange(event) {
     setSearch(event.target.value);
@@ -36,6 +39,7 @@ const Home = () => {
         <input
           className="bar"
           type="text"
+          setFood={setFood}
           value={search}
           onChange={handleFormChange}
         />
@@ -45,17 +49,29 @@ const Home = () => {
       </form>
 
       <h1>Welcome...its gonna be a lit day i swear ❤️ </h1>
-      {food.map((foo) => (
-        <Food
-          key={foo.idCategory}
-          name={foo.strCategory}
-          image={foo.strCategoryThumb}
-          price={foo.price}
-          description={foo.strCategoryDescription}
-        />
-      ))}
+      
+      {
+        food.filter((meal) => {
+          if (search === "") {
+            return meal;
+          } else if (meal.strCategory.toLowerCase().includes(search.toLocaleLowerCase())) {
+            return meal;
+          }
+        })
+          .map((meal) => (
+            <Food
+              key={meal.idCategory}
+              name={meal.strCategory}
+              image={meal.strCategoryThumb}
+              price={meal.price}
+              description={meal.strCategoryDescription}
+            />
+        
+          ))}
     </div>
   );
-};
+    }
+  
+
 
 export default Home;
