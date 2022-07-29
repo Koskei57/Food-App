@@ -15,7 +15,7 @@ As a user of the application,you will be able to:
 * Access to a computer or a mobile phone.
 
 ## live-link
-link = 
+link = https://koskei57.github.io/Food-app/
 
  ## Installation
 For one to use the website, you will have to git clone the repository link into your visual code and run the html file.
@@ -30,7 +30,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [https://myfood578.herokuapp.com/meal](https://myfood578.herokuapp.com/meal) to view it in your browser.
+Open [https://github.com/Koskei57/Food-app.git](https://github.com/Koskei57/Food-app.git) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.

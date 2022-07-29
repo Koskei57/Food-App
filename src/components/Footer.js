@@ -9,9 +9,9 @@ function Footer() {
           <div className="col">
             <h4>Contacts</h4>
           <div class="icons ">
-            <i class="fa-brands fa-instagram-square "></i>
-            <i class="fa-brands fa-facebook " id="facebook "></i>
-            <i class="fa-brands fa-twitter-square " id="twitter "></i>
+            <i style={{padding:"1rem"}} class="fa-brands fa-instagram-square "></i>
+            <i style={{padding:"1rem"}} class="fa-brands fa-facebook " id="facebook "></i>
+            <i style={{padding:"1rem"}} class="fa-brands fa-twitter-square " id="twitter "></i>
             </div>
            
           </div>
