@@ -1,3 +1,23 @@
 .login{
-align-items: center;
+border-radius: 10px;
+box-shadow: 0px 5px 20px rgb(75, 71, 71);
+margin: 20px;
+background: gray;
+width: 95%;
+
+}
+form {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+input, select {
+    width: 40%; 
+    margin-bottom: 0.5rem;  
+background-color:white; 
+}
+
+input[type="checkbox"] {
+    width: auto;
 }

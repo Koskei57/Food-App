@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from "react-scroll";
 
 function Food(){
     const[strCategory,setName] = useState("");
@@ -42,7 +43,7 @@ function Food(){
             <div className="form-group">
             <input type="text" placeholder="Enter price" className = "price" value={price} onChange={handlePrice} />
             <br/>
-            <input type="submit" value="Add product" className="btn" />
+            <button type="submit" value="Add " className="btn" >SUBMIT</button>
             </div>
         </form>
     )
