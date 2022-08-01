@@ -1,10 +1,23 @@
-.food{
-border-radius: 10px;
+.keroma{
+border-radius: 15px;
 box-shadow: 0px 5px 20px rgb(75, 71, 71);
 margin: 20px;
-display: flex;
-flex-direction: column;
+display: grid;
+grid-gap: 40px; grid-template: auto / repeat(auto-fit, minmax(300px, 1fr));
 justify-content: space-between;
 background: white;
 align-items: center;
+}
+.food>button{
+padding: 2px 10px;
+font-size: larger;
+border: 2px solid #a3a099;
+border-radius: 10px;
+background: #FCB500;
+
+}
+.food>button:hover{
+background: grey;
+cursor: pointer;
+transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
