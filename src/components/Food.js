@@ -34,7 +34,6 @@ const Home = () => {
 
   return (
     <div>
-      <div></div>
       <form className="search" onSubmit={handleFormSubmit}>
         <input
           className="bar"

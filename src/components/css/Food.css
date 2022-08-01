@@ -21,3 +21,10 @@ background: grey;
 cursor: pointer;
 transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+.search-button{
+border-radius: 10px;
+}
+.search-button:hover{
+cursor: pointer;
+}
+
